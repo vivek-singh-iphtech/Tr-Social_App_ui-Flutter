@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:social_app/screens/AccountPage.dart';
 import 'package:social_app/screens/HomePage.dart';
+import 'package:social_app/screens/MessagePage.dart';
 import 'package:social_app/screens/NotificationPage.dart';
+import 'package:social_app/screens/addFriendPage.dart';
 import 'package:social_app/themes/appTheme.dart';
 import 'package:provider/provider.dart';
 
@@ -13,8 +16,16 @@ const BottomNavbar({ Key? key }) : super(key: key);
 
 class _BottomNavbarState extends State<BottomNavbar> {
 
-  final PageController _pageController = PageController();
-  int current_index = 0;
+  final PageController _pageController = PageController(initialPage: 2);
+  int current_index = 2;
+
+
+  @override
+  void initState() {
+    super.initState();
+    onPageChanged(current_index);
+  }
+
    
   @override
   void dispose()
@@ -22,6 +33,8 @@ class _BottomNavbarState extends State<BottomNavbar> {
     _pageController.dispose();
     super.dispose();
   }
+
+ 
 
 void onTap(int index)
 {
@@ -34,8 +47,14 @@ void onTap(int index)
       duration: const Duration(milliseconds: 300),
       curve: Curves.ease,
     );
+
 }
 
+    void onPageChanged(int index) {
+    setState(() {
+      current_index = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context){
@@ -44,16 +63,14 @@ void onTap(int index)
       backgroundColor: appTheme.isDarkTheme?Colors.black:Colors.white,
       body: PageView(
         controller: _pageController,
-        onPageChanged: (index) {
-          setState(() {
-            current_index = index;
-          });
-        },
+        onPageChanged: onPageChanged,
         children: [
+          MessagePage(),
+          AddFriendPage(),
           HomePage(),
-          Container(color: Colors.green),
           NotificationPage(),
-          Container(color: Colors.yellow),
+          AccountPage(),
+          
         ],
       ),
 
@@ -71,11 +88,11 @@ void onTap(int index)
                 Padding(
                   padding: const EdgeInsets.only(left:8.0),
                   child: IconButton(onPressed: (){
-                    onTap(2);
+                    onTap(0);
                   }, icon: Icon(
                     Icons.message,
                     size: 28.0,
-                    color: current_index==2?Colors.blue:Colors.grey,
+                    color: current_index==0?Colors.blue:Colors.grey,
                   )),
                 ),
 
@@ -88,11 +105,11 @@ void onTap(int index)
                 )),
 
                 IconButton(onPressed: (){
-                  onTap(0);
+                  onTap(2);
                 }, icon: Icon(
                   Icons.home,
                   size: 28.0,
-                  color: current_index==0?Colors.blue:Colors.grey,
+                  color: current_index==2?Colors.blue:Colors.grey,
                 )),
 
                   IconButton(onPressed: (){

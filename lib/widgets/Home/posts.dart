@@ -33,8 +33,8 @@ class Posts extends StatelessWidget {
           
                   Text('19 min Ago',
                         style: appTheme.isDarkTheme
-                            ? darkTheme.textTheme.titleSmall
-                            : lightTheme.textTheme.titleSmall),
+                            ? darkTheme.textTheme.labelSmall
+                            : lightTheme.textTheme.labelSmall),
           
                 ],
               ),
@@ -71,8 +71,8 @@ class Posts extends StatelessWidget {
                         
                     Text('19 min Ago',
                           style: appTheme.isDarkTheme
-                              ? darkTheme.textTheme.titleSmall
-                              : lightTheme.textTheme.titleSmall),
+                              ? darkTheme.textTheme.labelSmall
+                              : lightTheme.textTheme.labelSmall),
                         
                   ],
                 ),
@@ -110,8 +110,8 @@ class Posts extends StatelessWidget {
                         
                     Text('19 min Ago',
                           style: appTheme.isDarkTheme
-                              ? darkTheme.textTheme.titleSmall
-                              : lightTheme.textTheme.titleSmall),
+                              ? darkTheme.textTheme.labelSmall
+                              : lightTheme.textTheme.labelSmall),
                         
                   ],
                 ),

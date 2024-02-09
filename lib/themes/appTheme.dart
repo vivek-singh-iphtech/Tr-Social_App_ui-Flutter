@@ -35,7 +35,10 @@ ThemeData lightTheme = ThemeData(
   brightness: Brightness.light,
   textTheme: const TextTheme(
     titleMedium:TextStyle(color: Colors.black,fontSize: 20.0,fontWeight: FontWeight.bold),
-    titleSmall: TextStyle(color: Colors.black,fontSize: 12.0),
+    labelSmall: TextStyle(color: Colors.black,fontSize: 12.0),
+    labelMedium: TextStyle(color: Colors.black,fontSize: 17.0,fontWeight: FontWeight.bold),
+    titleSmall:TextStyle(color: Colors.black,fontSize: 15.0),
+    titleLarge:TextStyle(color: Colors.black,fontSize: 28.0,fontWeight: FontWeight.bold),
   ),
 
    useMaterial3: true,
@@ -47,7 +50,10 @@ ThemeData darkTheme = ThemeData(
   brightness: Brightness.dark,
   textTheme: const TextTheme(
     titleMedium:TextStyle(color: Colors.white,fontSize: 20.0,fontWeight: FontWeight.bold),
-    titleSmall: TextStyle(color: Colors.white,fontSize: 12.0),
+    labelSmall: TextStyle(color: Colors.white,fontSize: 12.0),
+    labelMedium: TextStyle(color: Colors.white,fontSize: 17.0,fontWeight: FontWeight.bold),
+    titleSmall:TextStyle(color: Colors.white,fontSize: 15.0),
+    titleLarge:TextStyle(color: Colors.white,fontSize: 28.0,fontWeight: FontWeight.bold),
   ),
    useMaterial3: true,
 );
